@@ -1,1 +1,2 @@
 1-https://cs50.harvard.edu/x/2020/notes/0/#representing-data
+2-https://cs50.harvard.edu/x/2020/notes/1/#lecture-1
