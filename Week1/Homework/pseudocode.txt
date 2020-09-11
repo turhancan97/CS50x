@@ -1,0 +1,3 @@
+1. Kullanıcıya yüksekliği sor.
+2. Eğer (if) yükseklik 1 den küçükse veya 8’den büyükse (veya bir tam sayı yani integer değilse), bir adım geri git.
+3. 1’den yüksekliğe kadar şunu uygula: Uygulamanın i. basamağında, önce i kadar kare yazdırın ve sonra yeni bir satıra geç.
