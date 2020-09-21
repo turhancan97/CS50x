@@ -1,0 +1,11 @@
+1. Programın bir komut satırı değişkeniyle çalıştırılıp çalıştırılmadığını kontrol edin.
+2. Tüm karakterlerin rakam olduğundan emin olmak için sağlanan argümanı yineleyin.
+3. Bu komut satırı argümanını string’den int'e dönüştürün.
+4. Kullanıcıdan düz metin isteyin.
+5. Düz metnin her karakteri üzerinde yineleme yapın:
+
+ i. Büyük harfse, şifreye göre kaydırın, harf büyüklüğünü koruyun, sonra kaydırılmış karakteri yazdırın.
+ ii. Küçük harfse, şifreye göre kaydırın, harf büyüklüğünü koruyun, sonra kaydırılmış karakteri yazdırın.
+ iii. İkisi de değilse karakter neyse onu yazdırın.
+
+6. Yeni satır yazdırın.
