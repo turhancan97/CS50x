@@ -1,36 +1,43 @@
-import cs50
 import sys
+from cs50 import get_string
+
+
+def is_valid(k):
+    for ch in k:
+        if not ch.isalpha():
+            return False
+    return True
+
 
 def main():
-    if len(sys.argv) != 2:
-        print("You should provide a cmd line arguments!")
-        exit(1)
-    
-    if sys.argv[1].isalpha() == False:
-        print("You should provide valid keyword!")
-        exit(1)
-        
-    message = cs50.get_string()
-    translated = []
-    keyIndex = 0
-    keylength = len(sys.argv[1])
-    
-    for symbol in message:
-        if symbol.isalpha():
-            key = ord(sys.argv[1][keyIndex % keylength].lower()) - 97
-            keyIndex += 1
-            translated.append(caesar(symbol, key))
-        else:
-            translated.append(symbol)
-    
-    print("".join(translated))
-    exit(0)
-    
-def caesar(char, key):
-    if char.isupper():
-        return chr(((ord(char) - 65 + key) % 26) + 65)
-    else:
-        return chr(((ord(char) - 97 + key) % 26) + 97)
+    if len(sys.argv) != 2 or not is_valid(sys.argv[1]):
+        print("Usage: ./vigenere k")
+        sys.exit(1)
+
+    k = sys.argv[1]
+    plaintext = get_string("plaintext: ")
+    j = 0
+
+    print("ciphertext: ", end="")
+
+    for ch in plaintext:
+        if not ch.isalpha():
+            print(ch, end="")
+            continue
+
+        ascii_offset = 65 if ch.isupper() else 97
+
+        pi = ord(ch) - ascii_offset
+        kj = ord(k[j % len(k)].upper()) - 65
+        ci = (pi + kj) % 26
+        j += 1
+
+        print(chr(ci + ascii_offset), end="")
+
+    print()
+
+    return 0
+
 
 if __name__ == "__main__":
     main()
